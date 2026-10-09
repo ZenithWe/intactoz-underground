@@ -60,3 +60,14 @@ As animações são uma implementação original inspirada nos princípios do Mo
 ## Correção de carregamento da homepage
 
 Os scripts `config.js`, `motion.js` e `app.js` agora usam `defer` e JavaScript clássico, permitindo abrir `index.html` diretamente pelo explorador de arquivos (`file://`). Para testar integrações externas, prefira GitHub Pages ou um servidor local. Configure as chaves públicas no objeto `window.INTACTOZ_CONFIG` do arquivo `config.js`.
+
+## Backend conectado — Intactoz (2026-10)
+
+- URL pública: https://intactoz-underground.vercel.app/
+- Supabase compartilhado com **Arceuz**, com tabelas isoladas por prefixo `intactoz_`: `intactoz_products`, `intactoz_categories`, `intactoz_collections`, `intactoz_members`, `intactoz_admin_users`.
+- As políticas de segurança RLS permitem consultas públicas do catálogo e restringem modificações a administradores autorizados por `public.is_intactoz_admin()`.
+- As imagens enviadas pelo painel ficam no bucket `intactoz-products`.
+- **Não execute `supabase/schema.sql` sobre o banco compartilhado do Arceuz**: ele foi elaborado inicialmente para uma instalação exclusiva. A configuração compartilhada já foi aplicada por migrações no Supabase.
+- O projeto compartilha o serviço de autenticação da instância Supabase, mas utiliza dados de perfil e permissão Intactoz separados. Nunca publique chaves `service_role`.
+- Para conceder acesso administrativo, escolha um usuário que já tenha cadastro confirmado e atribua a autorização pelo backend, após verificar a identidade do titular. **Nunca habilite autorização admin por campos editáveis pelo usuário.**
+- Para confirmar cadastro e recuperar senha, autorize `https://intactoz-underground.vercel.app/**` em Authentication > URL Configuration > Redirect URLs no painel Supabase (sem remover as URLs existentes do Arceuz).
