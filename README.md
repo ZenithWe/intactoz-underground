@@ -45,3 +45,14 @@ Projeto estático, sem necessidade de build. Publique a pasta no GitHub Pages, V
 As fotos da collab Intactoz × KACE são creditadas no artigo original: https://www.kacewear.com.br/blogs/conteudo/sidoka-e-intactoz-x-kace-collab-envelope-traz-novas-roupas-e-acessorios. Confirme direitos de uso antes de publicar uma versão comercial. A foto do login veio da imagem enviada no chat e foi recortada para encaixar no mesmo retângulo do original.
 
 Os preços e links inicialmente são do HTML fornecido, **não demonstram estoque nem preços em tempo real**. Confirme disponibilidade no site original.
+
+## Animações de interface (inspiradas no MotionSites)
+
+A versão animada utiliza `motion.css` e `motion.js`, sem bibliotecas extras:
+- Entrada suave dos títulos, seções, editoriais e cards com IntersectionObserver.
+- Parallax discreto na fotografia principal e barra fina de progresso de rolagem.
+- Faixa editorial contínua (marquee) que pausa ao passar o cursor.
+- Hover que revela as cores originais das imagens, com zoom suave nas fotos dos produtos.
+- Respeita `prefers-reduced-motion` e não depende de animações para carregar conteúdo.
+
+As animações são uma implementação original inspirada nos princípios do MotionSites, não uma cópia de seus templates ou efeitos pagos.
