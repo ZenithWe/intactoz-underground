@@ -56,3 +56,7 @@ A versão animada utiliza `motion.css` e `motion.js`, sem bibliotecas extras:
 - Respeita `prefers-reduced-motion` e não depende de animações para carregar conteúdo.
 
 As animações são uma implementação original inspirada nos princípios do MotionSites, não uma cópia de seus templates ou efeitos pagos.
+
+## Correção de carregamento da homepage
+
+Os scripts `config.js`, `motion.js` e `app.js` agora usam `defer` e JavaScript clássico, permitindo abrir `index.html` diretamente pelo explorador de arquivos (`file://`). Para testar integrações externas, prefira GitHub Pages ou um servidor local. Configure as chaves públicas no objeto `window.INTACTOZ_CONFIG` do arquivo `config.js`.

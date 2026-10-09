@@ -48,7 +48,7 @@ function ensureProgressBar() {
   document.body.append(progressBar);
 }
 
-export function mountMotions() {
+function mountMotions() {
   observer?.disconnect();
   currentHero = document.querySelector('#main-content .hero');
   if (reducedMotion.matches) {
@@ -100,3 +100,5 @@ export function mountMotions() {
   requestScrollEffects();
 }
 reducedMotion.addEventListener?.('change', () => mountMotions());
+
+window.intactozMountMotions = mountMotions;
